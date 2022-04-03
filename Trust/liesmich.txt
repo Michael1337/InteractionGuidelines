@@ -1,0 +1,1 @@
+Um den Prototyp zu starten, öffnen Sie "index.html" in Ihrem Webbrowser (getestet mit Google Chrome).

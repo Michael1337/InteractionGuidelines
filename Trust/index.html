@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link active" href="index.html">Home</a>
+    </li>
+</ul>
+<div class="container">
+    <div class="row">
+
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            <p>Wir haben die besten Server der Welt. Super schnell, super zuverl?ssig.</p>
+            Ihre Vorteile:<br>
+            <ul>
+                <li>
+                    g?nstig
+                </li>
+                <li>
+                    schnell
+                </li>
+                <li>
+                    zuverl?ssig
+                </li>
+            </ul>
+            <br>
+            Unsere Auswahl f?r sie:<br>
+            <div class="row">
+                <div class="col-4">
+                    <strong>Basic</strong><br>
+                    Preis: 1€/m (0,00015376 BTC/m)<br>
+                    Speicher: 5/10 (500MB)<br>
+                    RAM: 4/10 (2GB)<br>
+                    Traffic: 6/10 (unlimited)<br>
+                </div>
+                <div class="col-4">
+                    <strong>Premium</strong><br>
+                    Preis: 10€/m (0,0015376 BTC/m)<br>
+                    Speicher: 8/10 (1000MB)<br>
+                    RAM: 8/10 (8GB)*<br>
+                    Traffic: 9/10 (unlimited)<br>
+                </div>
+                <div class="col-4 best">
+                    <strong>Premium+</strong><br>
+                    Preis: 20€/m (0,0030752 BTC/m)<br>
+                    Speicher: 10/10 (1500MB)**<br>
+                    RAM: 10/10 (16GB)<br>
+                    Traffic: 10/10 (unlimited)***<br>
+                </div>
+                <div class="col-12">
+                    <br>
+                    * Besser als der weltweite Durchschnitt!<br>
+                    ** Upgrade 500 MB f?r 2€/m (0.00030752 BTC/m)<br>
+                    *** <a href="brokenlink">Beste Leistung die sie kaufen k?nnen!</a><br>
+                    (akzepteirte Zahlugnsmethode: Kreditkarte & Bitcoin)
+                </div>
+            </div>
+            <div id="choose">
+                <br>
+                <form>
+                    <input type="radio" id="1" name="server" value="1">
+                    <label for="1"> Basic</label>
+                    <input type="radio" id="2" name="server" value="2">
+                    <label for="2"> Premium</label>
+                    <input type="radio" id="3" name="server" value="3">
+                    <label for="3"> Premium+</label><br>
+                    <input type="submit" value="w?hlen" id="buy"><br>
+                </form>
+            </div>
+            <div id="buyDiv">
+                <br>
+                <form id="buyForm">
+                    Zahlungsmethode:<br>
+                    <input type="radio" id="pay1" name="payment" value="1">
+                    <label for="pay1"> Bitcoin</label>
+                    <input type="radio" id="pay2" name="payment" value="2">
+                    <label for="pay2"> Kreditkarte</label>
+                    <br>
+                    <p id="bitcoin" class="payment">Senden Sie genau 0,0030752 Bitcoin an:<br>
+                        1DfGq1RandomBitcoinAddress1toQM4Q1!</p>
+                    <div class="row payment" id="creditcard">
+                        <div class="col-12">
+                            <label for="ccNumber">Kreditkartennummer:</label><br>
+                            <input type="text" id="ccNumber" size="20"><br>
+                        </div>
+                        <div class="col-12">
+                            <label for="ccDate">G?ltig bis:</label><br>
+                            <input type="text" id="ccDate" size="10"><br>
+                        </div>
+                        <div class="col-12">
+                            <label for="ccCVV">CVV:</label><br>
+                            <input type="text" id="ccCVV" size="10"><br>
+                        </div>
+                        <div class="col-12">
+                            <label for="ccName">Kreditkarteninhaber:</label><br>
+                            <input type="text" id="ccName">
+                        </div>
+                    </div>
+                    <input type="submit" id="done" value="Best?tigen">
+                </form>
+            </div>
+
+            <br>
+            <br>
+            <strong>Was andere ?ber uns sagen:</strong><br>
+            <p id="comments">
+                Spam Bot (09/08/2015): Check out our offers at best-servers.net!<br>
+                Anon (06/06/2013): SCAM!!<br>
+                Randy Disher (03/04/2012): is this still valid?<br>
+                Marius Josipovic (07/10/2009): Alles T O P ! ! !<br>
+                Frank Abagnale (06/08/2009): Schnelle Schaltung, netter Verkäufer, gerne wieder!<br>
+                Shawn Spencer (05/06/2009): Die besten Server auf dem Markt.<br>
+            </p>
+            <form>
+                Name: <br>
+                <input type="text" id="name"><br>
+                Text: <br>
+                <textarea cols="50" rows="5" id="text"></textarea><br>
+                <input type="submit" value="abschicken" id="submit">
+            </form>
+        </div>
+        <div class="col-2 advert">
+            <p><a href="default.html">Annette (39) aus Nürnberg möchte dich kennenlernen!</a></p>
+            <hr>
+            <p><a href="default.html">Es befinden sich über 50 Singles in deiner Nähe!</a></p>
+            <hr>
+            <p><a href="default.html"><span class="blink">( . Y . )</span><br>Click here for fun!</a></p>
+        </div>
+
+    </div>
+</div>
+<br>
+<br>
+<footer>
+    (C) 2009 | <a href="impressum.html">Info</a>
+</footer>
+
+</body>
+</html>

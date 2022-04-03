@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buchung</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/daterangepicker.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link" href="index.html">Über uns</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="booking.html">Buchung</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="impressum.html">Impressum</a>
+    </li>
+</ul>
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- LOGIN -->
+        <div class="col-12 col-sm-8 col-md-8 col-lg-6 col-xl-5 formular" id="formLogIn">
+            <p>
+                Bitte loggen Sie sich ein, um eine Übernachtung zu buchen.<br>
+                <a href="" id="logInCreate">Ich habe noch kein Bentzerkonto.</a>
+            </p>
+            <form>
+                <div class="form-group">
+                    <label for="logInEmail">E-Mail-Adresse</label>
+                    <input type="email" class="form-control" id="logInEmail" placeholder="Ihre E-Mail-Adresse">
+                </div>
+                <label for="logInPassword">Passwort</label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="logInPassword" placeholder="Ihr Passwort">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-secondary rounded-right" id="logInPasswordBtn"
+                                tabindex="-1"><span
+                                class="fa fa-eye" title="Passwort zeigen/verbergen" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="logInRemember">
+                    <label class="form-check-label" for="logInRemember">merken</label>
+                </div>
+                <div class="float-right">
+                    <div class="float-right">
+                        <span id="logInError"></span>
+                    </div>
+                    <div class="col-12"></div>
+                    <div class="float-right">
+                        <button type="submit" class="btn btn-primary" id="logInSubmit" disabled="disabled">
+                            Einloggen
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-12"></div>
+        <!-- CREATE ACCOUNT -->
+        <div class="col-12 col-sm-8 col-md-8 col-lg-6 col-xl-5 formular" id="formCreateAccount">
+            <p>
+                Nach der Registrierung können Sie Ihre Buchung beginnen.<br>
+                <a href="" id="createLogIn">Ich habe bereits ein Benutzerkonto.</a>
+            </p>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-7">
+                        <label for="createEmail">E-Mail-Adresse (<span class="mandatory">*</span>)</label>
+                        <input type="email" class="form-control required" id="createEmail"
+                               placeholder="mustermensch@email.de" required>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="createPhone">Handynummer</label>
+                        <input type="tel" class="form-control" id="createPhone" placeholder="+49 1534 567890">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="createPassword">Passwort (<span class="mandatory">*</span>)</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control required" id="createPassword"
+                                   placeholder="Ihr Passwort" required>
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary rounded-right"
+                                        id="createPasswordBtn" tabindex="-1" title="Passwort zeigen/verbergen"><span
+                                        class="fa fa-eye" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="createPassword2">Passwort wiederholen (<span class="mandatory">*</span>)</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control required" id="createPassword2"
+                                   placeholder="Ihr Passwort" required>
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-secondary" id="createPassword2Btn"
+                                        tabindex="-1" title="Passwort zeigen/verbergen"><span
+                                        class="fa fa-eye" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <small class="form-text text-muted">
+                            Ihr Passwort muss mindestens 8 Zeichen lang sein und dabei Buchstaben, Ziffern
+                            <em>und</em> Sonderzeichen enthalten.
+                        </small>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="createFirstname">Vorname (<span class="mandatory">*</span>)</label>
+                        <input type="text" class="form-control required" id="createFirstname" placeholder="Mika"
+                               required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="createLastname">Nachname (<span class="mandatory">*</span>)</label>
+                        <input type="text" class="form-control required" id="createLastname" placeholder="Mustermensch"
+                               required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="createCountry">Land (<span class="mandatory">*</span>)</label>
+                        <select id="createCountry" class="form-control required" required>
+                            <option value="DE" selected="selected">Deutschland</option>
+                            <option value="AT">Österreich</option>
+                            <option value="CH">Schweiz</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="createPLZ">PLZ</label>
+                        <input value="" maxlength="5" id="createPLZ" type="number" class="form-control numberNoSpinner"
+                               placeholder="12345">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="createCity">Ort</label>
+                        <input value="" id="createCity" type="text" class="form-control" placeholder="Musterstadt">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-9">
+                        <label for="createAdress">Straße</label>
+                        <input type="text" class="form-control" id="createAdress" placeholder="Musterstraße">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="createAdress2">Hausnummer</label>
+                        <input type="text" class="form-control" id="createAdress2" placeholder="221b">
+                    </div>
+                </div>
+                <div class="float-right">
+                    <div class="float-right">
+                        <span id="createAccountError"></span>
+                    </div>
+                    <div class="col-12"></div>
+                    <div class="float-right">
+                        <button type="submit" class="btn btn-primary" id="createAccountSubmit">Benutzerkonto erstellen
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-12"></div>
+        <!-- BUCHUNG // ZAHLUNGSART -->
+        <div class="col-12 col-sm-8 col-md-8 col-lg-6 col-xl-5 formular" id="booking">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="bookingHotel">Hotel (<span class="mandatory">*</span>)</label>
+                        <select id="bookingHotel" class="form-control required" required>
+                            <option selected="selected">Hotel 1 (Würzburg)</option>
+                            <option>Hotel 2 (Hamburg)</option>
+                            <option>Hotel 3 (Berlin)</option>
+                            <option>Hotel 4 (München)</option>
+                            <option>Hotel 5 (Köln)</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="bookingDate">Reisedaten (<span class="mandatory">*</span>)</label>
+                        <input type="text" class="form-control required" id="bookingDate" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-3">
+                        <label for="bookingAdults">Gäste&nbsp;(<span class="mandatory">*</span>)</label>
+                        <select id="bookingAdults" class="form-control required" required>
+                            <option selected="selected">1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="bookingRooms">Zimmer&nbsp;(<span class="mandatory">*</span>)</label>
+                        <select id="bookingRooms" class="form-control required" required>
+                            <option selected="selected">1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="bookingPayment">Zahlungsart&nbsp;(<span class="mandatory">*</span>)</label>
+                        <select class="form-control required" id="bookingPayment" required>
+                            <option value="0"></option>
+                            <option value="1">Barzahlung vor Ort</option>
+                            <option value="2">Kreditkarte</option>
+                            <option value="3">Paypal</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                    <fieldset class="form-group col-sm-6 col-md-4">
+                        <div class="row">
+                            <legend class="col-form-label col-12 pt-0">Extras</legend>
+                            <div class="col-sm-8 col-md-8">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="bookingExtras1">
+                                    <label class="form-check-label" for="bookingExtras1">
+                                        Frühstück
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="bookingExtras2">
+                                    <label class="form-check-label" for="bookingExtras2">
+                                        WLAN
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="bookingExtras4">
+                                    <label class="form-check-label" for="bookingExtras4">
+                                        Weckservice
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="bookingExtras3">
+                                    <label class="form-check-label" for="bookingExtras3">
+                                        Mietauto
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group col-sm-6 col-md-4">
+                        <div class="row">
+                            <legend class="col-form-label col-12 pt-0">Reiseart</legend>
+                            <div class="col-sm-8 col-md-8">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="1" name="bookingKind"
+                                           id="bookingKind1">
+                                    <label class="form-check-label" for="bookingKind1">
+                                        geschäftlich
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="2" name="bookingKind"
+                                           id="bookingKind2">
+                                    <label class="form-check-label" for="bookingKind2">
+                                        privat
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group col-md-4">
+                        <label for="bookingCheckIn">geplanter Check-In</label>
+                        <select id="bookingCheckIn" class="form-control">
+                            <option selected="selected">nicht sicher</option>
+                            <option>14:00 Uhr</option>
+                            <option>14:30 Uhr</option>
+                            <option>15:00 Uhr</option>
+                            <option>15:30 Uhr</option>
+                            <option>16:00 Uhr</option>
+                            <option>16:30 Uhr</option>
+                            <option>17:00 Uhr</option>
+                            <option>17:30 Uhr</option>
+                            <option>18:00 Uhr</option>
+                            <option>18:30 Uhr</option>
+                            <option>19:00 Uhr</option>
+                            <option>19:30 Uhr</option>
+                            <option>20:00 Uhr</option>
+                            <option>20:30 Uhr</option>
+                            <option>21:00 Uhr</option>
+                            <option>21:30 Uhr</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="float-right">
+                    <span id="bookingError"></span>
+                </div>
+                <div class="col-12"></div>
+                <div class="float-left">
+                    <button type="submit" class="btn btn-secondary" id="bookingReturn">Benutzerdaten ändern</button>
+                </div>
+                <div class="float-right">
+                    <button type="submit" class="btn btn-primary" id="bookingSubmit">jetzt kostenpflichtig buchen
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/jquery.daterangepicker.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

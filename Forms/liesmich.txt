@@ -1,0 +1,3 @@
+Um den Prototyp zu starten, öffnen Sie "index.html" in Ihrem Webbrowser (getestet mit Google Chrome).
+Einige Funktionen erfordern eine aktive Internetverbindung (Ort aus PLZ generieren).
+Eingegebene personenbezogene Daten werden nicht weiterverarbeitet/an Dritte gesendet/gespeichert.

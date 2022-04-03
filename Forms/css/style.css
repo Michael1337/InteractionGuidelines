@@ -1,0 +1,43 @@
+.formular {
+    display: none;
+}
+
+.numberNoSpinner::-webkit-outer-spin-button,
+.numberNoSpinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.mandatory {
+    color: red;
+    font-weight: bold;
+}
+
+.errorText {
+    color: red;
+}
+
+hr {
+    background-color: #fff;
+    border-top: 2px dashed #8c8b8b;
+}
+
+.required {
+    background-color: #faffb7;
+}
+
+.form-control::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+.btn.disabled, .btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #80a1b0;
+    border-color: #80a1b0;
+}
