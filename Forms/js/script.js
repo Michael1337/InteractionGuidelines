@@ -93,7 +93,7 @@ $(document).ready(function () {
         }
         if ($(this).val().length >= 4) {
             var ort = $('#createCity');
-            $.getJSON('http://www.geonames.org/postalCodeLookupJSON?&country=' + $("#createCountry").val() + '&callback=?', {postalcode: this.value}, function (response) {
+            $.getJSON('https://www.geonames.org/postalCodeLookupJSON?&country=' + $("#createCountry").val() + '&callback=?', {postalcode: this.value}, function (response) {
                 if (response && response.postalcodes.length && response.postalcodes[0].placeName) {
                     ort.val(response.postalcodes[0].placeName);
                 }
